@@ -71,6 +71,15 @@ class RouteConfig {
         //   ]
         // ),
       ],
+      redirect: (context, state) {
+        bool isLoggedIn = 5 > 4;
+        
+        if(!isLoggedIn){
+          return '/';  
+        }
+        
+        return '/products';
+      },
       errorBuilder: (context, state) {
         return ErrorScreen(error: state.error.toString());
       },
